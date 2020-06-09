@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import {Route, Switch} from 'react-router-dom'
 import Error from './pages/Error'
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route path='/rooms/:slug' component={SingleRoom} />
         <Route component={Error} />
       </Switch>
+
+      <Footer />
     </div>
   );
 }

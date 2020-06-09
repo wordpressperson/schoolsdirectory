@@ -511,3 +511,10 @@ h6 {
   }
 }
 /* end of rooms fitler*/
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: tomato;
+  color: white;
+}
