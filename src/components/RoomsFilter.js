@@ -38,8 +38,8 @@ function RoomsFilter({rooms}) {
                     </div>
                     {/*guests type*/}
                     <div className="form-group">
-                        <label htmlFor="capacity">Location (GPZ)</label>
-                        <select name="capacity" id="capacity" value={schoollocation} className="form-control" onChange={handleChange}>{location}</select>
+                        <label htmlFor="schoollocation">Location (GPZ)</label>
+                        <select name="schoollocation" id="schoollocation" value={schoollocation} className="form-control" onChange={handleChange}>{location}</select>
                     </div>
                     {/* price type */}
                     <div className="form-group">
