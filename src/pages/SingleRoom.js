@@ -57,7 +57,7 @@ export default class SingleRoom extends Component {
                         </article>
                         <article className="info">
                             <h3>info</h3>
-                            <h6>avg fees: ₦{(schoolfees<1000) ? (schoolfees+'k') : (schoolfees/1000)+'m'}</h6>
+                            <h6>avg fees: ₦{((schoolfees/1000000)<1) ? ((schoolfees/1000)+'k') : ((schoolfees/1000000)+'m')}</h6>
                             <h6>established: {foundingyear} </h6>
                             <h6>Geopolitical zone: {schoollocation}</h6>
                             <h6>{medicine ? "medical faculty exists" : "no medicine faculty"}</h6>
