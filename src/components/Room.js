@@ -10,7 +10,7 @@ function Room({room}) {
             <div className="img-container">
                 <img src={images[0] || defaultImg} alt="single room" />
                 <div className="price-top">
-                    <h6>₦{schoolfees<1000 ? schoolfees+'k' : schoolfees+'000'}</h6>
+                    <h6>₦{(schoolfees<1000) ? (schoolfees+'k') : (schoolfees/1000)+'m'}</h6>
                     <p>per session</p>
                 </div>
                 <Link to={`/rooms/${slug}`} className="btn-primary room-link">Featured</Link>
