@@ -22,6 +22,7 @@ function RoomsFilter({rooms}) {
     })
 
     let location = getUnique(rooms, 'schoollocation')
+    location = ['all', ...location]
     location = location.map((item, index) => {
         return <option key={index} value={item}>{item}</option>
     })
@@ -33,8 +34,8 @@ function RoomsFilter({rooms}) {
                 <form className="filter-form">
                     {/*room type*/}
                     <div className="form-group">
-                        <label htmlFor="type">school type</label>
-                        <select name="type" id="type" value={schooltype} className="form-control" onChange={handleChange}>{schooltypes}</select>
+                        <label htmlFor="schooltype">school type</label>
+                        <select name="schooltype" id="schooltype" value={schooltype} className="form-control" onChange={handleChange}>{schooltypes}</select>
                     </div>
                     {/*guests type*/}
                     <div className="form-group">
