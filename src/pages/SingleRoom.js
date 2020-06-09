@@ -62,7 +62,7 @@ export default class SingleRoom extends Component {
                             <h6>Geopolitical zone: {schoollocation}</h6>
                             <h6>{medicine ? "medical faculty exists" : "no medicine faculty"}</h6>
                             <h6>{law ? "law faculty exists" : "no law faculty"}</h6>
-                            <h6>{medicine ? "engineering college exists" : "no engineering courses"}</h6>
+                            <h6>{engineering ? "engineering college exists" : "no engineering courses"}</h6>
                             <h6>{agriculture && "agriculture course are available"}</h6>
                         </article>
                     </div>                 
