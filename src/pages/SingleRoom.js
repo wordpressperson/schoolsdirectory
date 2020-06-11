@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+﻿import React, { Component } from 'react'
 import defaultBgc from '../images/rooms2.jpg'
 import Hero from '../components/Hero'
 import Banner from '../components/Banner'
