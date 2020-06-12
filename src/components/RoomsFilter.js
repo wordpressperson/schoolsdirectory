@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import {useContext} from 'react'
 import {RoomContext} from '../context'
 import Title from '../components/Title'
@@ -30,7 +30,7 @@ function RoomsFilter({rooms}) {
     return (
         <div>
             <section className="filter-container">
-                <Title title="search rooms" />
+                <Title title="Higher Institutions" />
                 <form className="filter-form">
                     {/*room type*/}
                     <div className="form-group">
