@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Hero>
                 <Banner title="Higher institutions directory" subtitle="...informing you of your choice schools" >
-                  <Link to='/rooms' className="btn-primary">View accredited schools</Link>
+                  <Link to='/schools' className="btn-primary">View accredited schools</Link>
                 </Banner>
             </Hero>
             <Services />

@@ -32,7 +32,7 @@ export default class SingleRoom extends Component {
         if (!room) {
             return (<div className="error">
                 <h3>no such school could be found</h3>
-                <Link to='/rooms' className="btn-primary">back to schools</Link>
+                <Link to='/schools' className="btn-primary">back to schools</Link>
             </div>)
         }
         const {schoolname, description, schoollocation, foundingyear, schoolfees, extras, medicine, law, engineering, agriculture, images} = room 
@@ -41,7 +41,7 @@ export default class SingleRoom extends Component {
             <div>
                 <StyledHero img={images[0] || defaultBgc}>
                     <Banner title={`${schoolname} `}>
-                        <Link to='/rooms' className='btn-primary'>back to schools</Link>
+                        <Link to='/schools' className='btn-primary'>back to schools</Link>
                     </Banner>
                 </StyledHero>      
                 <section className="single-room">

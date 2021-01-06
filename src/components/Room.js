@@ -13,7 +13,7 @@ function Room({room}) {
                     <h6>₦{((schoolfees/1000000)<1) ? ((schoolfees/1000)+'k') : ((schoolfees/1000000)+'m')}</h6>
                     <p>per session</p>
                 </div>
-                <Link to={`/rooms/${slug}`} className="btn-primary room-link">Featured</Link>
+                <Link to={`/schools/${slug}`} className="btn-primary room-link">Featured</Link>
             </div>
     <p className="room-info">{schoolname}</p>
         </article>
