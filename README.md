@@ -1,68 +1,95 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MultiMIMS: Nigeria Higher Education Directory
 
-## Available Scripts
+MultiMIMS is a modern, data-driven web application that serves as a centralized directory for higher education institutions in Nigeria. Built with a decoupled architecture, it leverages React for a fast user interface and Contentful as a headless CMS for robust data management.
+🚀 Live Links
 
-In the project directory, you can run:
+    Production Domain: multimims.com
 
-### `npm start`
+    Netlify Deployment: wonderful-goodall-2e37c5.netlify.app
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🛠 Tech Stack
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    Frontend: React.js
 
-### `npm test`
+    CMS / Datastore: Contentful
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Hosting & CI/CD: Netlify
 
-### `npm run build`
+    DNS: Netlify DNS (SSL via Let's Encrypt)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📐 Architecture Overview
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The application follows a Jamstack pattern:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Source Code: Managed in GitHub and connected to Netlify via webhooks.
 
-### `npm run eject`
+    Continuous Deployment: Every push to the main branch triggers a build on Netlify.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    Headless Data: The React frontend fetches school data (images, descriptions, etc.) dynamically from Contentful using the Content Delivery API.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Global Delivery: The built site is served via Netlify's Edge Network for high performance.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+⚙️ Environment Variables
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To connect the frontend to the Contentful datastore, you must configure the following environment variables in your local .env file and your Netlify build settings:
+Variable	Description
+REACT_APP_ACCESS_TOKEN	Your Contentful Content Delivery API (CDA) access token.
+REACT_APP_API_SPACE	Your unique Contentful Space ID.
+💻 Local Development
+Prerequisites
 
-## Learn More
+    Node.js (Latest LTS recommended)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    npm or yarn
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Setup Instructions
 
-### Code Splitting
+    Clone the repository:
+    Bash
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+    git clone https://github.com/wordpressperson/schoolsdirectory.git
+    cd schoolsdirectory
 
-### Analyzing the Bundle Size
+    Install dependencies:
+    Bash
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    npm install
 
-### Making a Progressive Web App
+    Configure environment variables:
+    Create a .env.local file in the root directory and add your credentials:
+    Plaintext
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    REACT_APP_ACCESS_TOKEN=your_token_here
+    REACT_APP_API_SPACE=your_space_id_here
 
-### Advanced Configuration
+    Run the application:
+    Bash
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+    npm start
 
-### Deployment
+    The app will be available at http://localhost:3000.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+📝 Content Management
 
-### `npm run build` fails to minify
+Since this application is "headless," schools are added, updated, or deleted through the Contentful Dashboard.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    Schools: Managed as individual entries in the Content Model.
+
+    Assets: School logos and campus photos are stored in the Media section of Contentful.
+
+📦 Deployment
+
+This project is configured for automated deployment via Netlify.
+
+    To deploy changes, simply push your code to the main branch:
+    Bash
+
+    git add .
+    git commit -m "Update school directory logic"
+    git push origin main
+
+    Netlify will automatically detect the push, run the build command (npm run build), and deploy the new version to multimims.com.
+
+📄 License
+
+This project is for educational and directory purposes. All school-related information is provided as-is.
